@@ -1,27 +1,8 @@
-using UnityEngine;
 using System.Runtime.InteropServices;
-public class AdHandler : MonoBehaviour
+public static class AdHandler
 {
     [DllImport("__Internal")]
-    private static extern void ShowAdExtern();
+    public static extern void ShowAd();
     [DllImport("__Internal")]
-    private static extern void ReviveExtern();
-    [SerializeField] private FadeAnimation _reviveButton;
-    public static AdHandler Instance { get; private set; }
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
-    }
-    public void ShowReviveAd()
-    {
-        _reviveButton.FadeOut();
-        ReviveExtern();
-    }
-    public void ShowAd()
-    {
-        ShowAdExtern();
-    }
+    public static extern void ReviveAd();
 }

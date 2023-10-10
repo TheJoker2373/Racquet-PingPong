@@ -12,7 +12,7 @@ public class TextLocalization : MonoBehaviour
     }
     private void Start()
     {
-        if (LocalizationHandler.Instance.GetLanguage() == "en")
+        if (LocalizationHandler.GetLanguage() == "en")
             _textHolder.text = _en;
         else
             _textHolder.text = _ru;

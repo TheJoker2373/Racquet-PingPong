@@ -1,11 +1,6 @@
-using UnityEngine;
 using System.Runtime.InteropServices;
-public class LeaderboardHandler : MonoBehaviour
+public static class LeaderboardHandler
 {
     [DllImport("__Internal")]
-    private static extern void SetLeaderBoardExtern(int score);
-    public void SetLeaderBoard()
-    {
-        SetLeaderBoardExtern(CountHandler.Instance.Count);
-    }
+    public static extern void SetLeaderboard(int score);
 }

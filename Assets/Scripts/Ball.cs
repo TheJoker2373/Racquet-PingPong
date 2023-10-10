@@ -3,20 +3,24 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float _maxVelocity;
+    [SerializeField] private float _maxVelocity = 15f;
+    [SerializeField] private float _minImpulse = 0.4f;
+    [SerializeField] private float _impulseDivider = 1500f;
     private Rigidbody2D _rigidBody;
     private AudioSource _audio;
-    private CountHandler _counter;
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _audio = GetComponent<AudioSource>();
-        _counter = FindObjectOfType<CountHandler>();
     }
     private void OnValidate()
     {
         if (_maxVelocity < 0)
             _maxVelocity = 0;
+        if (_minImpulse < 0)
+            _minImpulse = 0;
+        if (_impulseDivider < 0)
+            _impulseDivider = 0;
     }
     private void Start()
     {
@@ -30,10 +34,10 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Racquet>())
         {
-            float impulse = collision.GetContact(0).normalImpulse / 1500f;
-            if (impulse < 0.4f)
+            float impulse = collision.GetContact(0).normalImpulse / _impulseDivider;
+            if (impulse < _minImpulse)
                 return;
-            _counter.IncreseCount();
+            CountHandler.Instance.IncreseCount();
             _audio.pitch = Random.Range(0.8f, 1.2f);
             _audio.volume = impulse;
             _audio.Play();

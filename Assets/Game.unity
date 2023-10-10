@@ -594,21 +594,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1135376800}
-        m_TargetAssemblyTypeName: Reloader, Assembly-CSharp
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1135376802}
-        m_TargetAssemblyTypeName: Yandex, Assembly-CSharp
-        m_MethodName: SetLeaderBoard
+      - m_Target: {fileID: 1135376798}
+        m_TargetAssemblyTypeName: EndScreen, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -834,9 +822,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1135376804}
-        m_TargetAssemblyTypeName: AdHandler, Assembly-CSharp
-        m_MethodName: ShowReviveAd
+      - m_Target: {fileID: 1135376803}
+        m_TargetAssemblyTypeName: ReviveHandler, Assembly-CSharp
+        m_MethodName: ShowAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 567869362}
+        m_TargetAssemblyTypeName: FadeAnimation, Assembly-CSharp
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1465,14 +1465,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1135376797}
   - component: {fileID: 1135376795}
-  - component: {fileID: 1135376796}
   - component: {fileID: 1135376798}
+  - component: {fileID: 1135376796}
   - component: {fileID: 1135376799}
-  - component: {fileID: 1135376800}
-  - component: {fileID: 1135376806}
-  - component: {fileID: 1135376802}
   - component: {fileID: 1135376803}
-  - component: {fileID: 1135376805}
   - component: {fileID: 1135376804}
   m_Layer: 0
   m_Name: Management
@@ -1536,7 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endScreen: {fileID: 1628189505}
-  _counterHolder: {fileID: 853977215}
+  _countHolder: {fileID: 0}
 --- !u!114 &1135376799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,30 +1546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 1756062355}
---- !u!114 &1135376800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135376794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0922ef3c34ed02a4d871748e0209f9a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1135376802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135376794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a14107341a977b84bb317065a4e64c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1135376803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,35 +1567,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135376794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a8d7c6128b3ed40a91e1bf41f605fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _reviveButton: {fileID: 567869362}
---- !u!114 &1135376805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135376794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7af08239c0992a4e9ca223b4ea7a77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _textHolder: {fileID: 1312162044}
---- !u!114 &1135376806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135376794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c9f785d7a9e264cbb1d27137dd65f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _minMagnitude: 0.5
 --- !u!1 &1144051407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxVelocity: 15
+  _minImpulse: 0.4
+  _impulseDivider: 1500
 --- !u!82 &1280372582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1980,7 +1930,7 @@ GameObject:
   - component: {fileID: 1312162045}
   - component: {fileID: 1312162044}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: InactionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
