@@ -23,7 +23,7 @@ mergeInto(LibraryManager.library, {
       }
     })
   },
-  ShowAd: function ()
+  FullscreenAd: function ()
   {
     ysdk.adv.showFullscreenAdv({callbacks:{}});
   }

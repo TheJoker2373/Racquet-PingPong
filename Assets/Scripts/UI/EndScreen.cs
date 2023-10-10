@@ -8,7 +8,7 @@ public class EndScreen : MonoBehaviour
         Time.timeScale = 0f;
         _endScreen.FadeIn();
         _countHolder.FadeOut();
-        AdHandler.ShowAd();
+        AdHandler.FullscreenAd();
     }
     public void CloseScreen()
     {
