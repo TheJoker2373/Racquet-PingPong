@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 public class InactionHandler : MonoBehaviour
 {
-    [SerializeField] private Text _textHolder;
+    [SerializeField] private TextMeshProUGUI _textHolder;
     [SerializeField] private float _minMagnitude = 0.5f;
     private Rigidbody2D _ball;
     private EndScreen _endScreen;

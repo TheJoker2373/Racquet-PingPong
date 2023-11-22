@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 public class CountHandler : MonoBehaviour
 {
-    [SerializeField] private Text _textHolder;
+    [SerializeField] private TextMeshProUGUI _textHolder;
     public static CountHandler Instance {  get; private set; }
     public int Count { get; private set; }
     private void Awake()

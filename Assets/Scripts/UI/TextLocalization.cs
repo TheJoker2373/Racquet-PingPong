@@ -1,14 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
-[RequireComponent(typeof(Text))]
+using TMPro;
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class TextLocalization : MonoBehaviour
 {
     [SerializeField] private string _ru;
     [SerializeField] private string _en;
-    private Text _textHolder;
+    private TextMeshProUGUI _textHolder;
     private void Awake()
     {
-        _textHolder = GetComponent<Text>();
+        _textHolder = GetComponent<TextMeshProUGUI>();
     }
     private void Start()
     {
